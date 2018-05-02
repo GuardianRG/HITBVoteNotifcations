@@ -6,8 +6,6 @@ def push(title,message):
 
 adict = {}
 
-
-
 while (True):
 	try:
 		headers = {'User-Agent': 'Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)'}
@@ -16,8 +14,7 @@ while (True):
 		finalpush = ""
 	except:
 		continue
-	
-	
+
 	for table in soup.findAll("table", class_="paper_list"):
 		for tr in table.findAll("tr"):
 				paper = ""
@@ -54,18 +51,4 @@ while (True):
 	if finalpush != "":
 		push("Votes Changed", finalpush)
 		
-		#print dict
-	#					print "{}: {} votes".format(author,votes)
-	
-	#		print "{}: {} votes".format(author,newvote)
-	
-	#		if lastvote != newvote:
-	#			lastvote = newvote
-				# Vote changed
-	#			if lastvote <= newvote:
-					# vote increased
-	#				push("{} - Vote increased".format(author), "Votes: {}".format(newvote))
-	#			else:
-	#				push("{} - Vote decreased".format(author), "Votes: {}".format(newvote))
-					# vote decreased
 	
